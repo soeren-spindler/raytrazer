@@ -6,6 +6,7 @@ end
 local GLFW_DIR = "dependencies/glfw"
 local GLAD_DIR = "dependencies/glad"
 local GLM_DIR = "dependencies/glm"
+local IMGUI_DIR = "dependencies/imgui"
 
 workspace "Raytrazer"
 	location(BUILD_DIR)
@@ -49,9 +50,10 @@ project "Raytrazer.Editor"
 	}
 
 	includedirs {
-		GLM_DIR,
 		path.join(GLAD_DIR, "include"),
 		path.join(GLFW_DIR, "include"),
+		GLM_DIR,
+		IMGUI_DIR,
 		"src/core/include"
 	}
   

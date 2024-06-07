@@ -1,26 +1,20 @@
-#include <cstdio>
 #include <cstdlib>
 
-#include "editor_window.h"
+#include "editor_application.h"
 
 using namespace raytrazer_editor;
 
 int main()
 {
-	EditorWindow window("Raytrazer Editor", 1366, 768);
-	window.Create();
+	EditorApplication application;
+	application.Initialize();
 
-	while (!window.ShouldClose())
+	while (!application.ShouldClose())
 	{
-		window.PollEvents();
-
-		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
-
-		window.SwapBuffers();
+		application.Update();
 	}
 
-	window.Destroy();
+	application.Destroy();
 
 	return EXIT_SUCCESS;
 }
